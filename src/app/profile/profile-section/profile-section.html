@@ -1,0 +1,13 @@
+@if (sectionTitle()) {
+    <section class="max-w-[90%] md:max-w-[60%] text-xl container mx-auto mt-12 mb-4">
+        <span class="app-section-header rounded">
+            {{ sectionTitle()}}
+        </span>
+    </section>
+}
+<article 
+    id="profile-card" 
+    class="container rounded shadow-lg max-w-[90%] md:max-w-[60%] mx-auto"
+    [ngClass]="{ 'mt-8': sectionTitle() }">
+    <ng-content />
+</article>
