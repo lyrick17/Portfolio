@@ -30,7 +30,6 @@ export class ProjectsService {
         const project = this.getProjectById(id);
         if (project) {
             this.selectedProject = project;
-            console.log(`Selected project: ${project.name}`);
         }
     }
 

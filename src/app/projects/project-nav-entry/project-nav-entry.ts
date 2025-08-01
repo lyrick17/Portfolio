@@ -15,6 +15,5 @@ export class ProjectNavEntry {
 
   onProjectClick() {
     this.onClick.emit(this.project());
-    console.log(`Project clicked: ${this.project().name}`);
   }
 }

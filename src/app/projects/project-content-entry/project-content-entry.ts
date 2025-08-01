@@ -32,7 +32,6 @@ export class ProjectContentEntry {
     const widthSignal = toSignal(resize$, { initialValue: window.innerWidth });
     effect(() => {
       const width = widthSignal();
-      console.log('viewport width changed 2:', width);
         // Change the header size based on the viewport size
       this.updateShowSkillName(width);
     });
