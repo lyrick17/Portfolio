@@ -5,10 +5,12 @@ import { Component, input } from '@angular/core';
   selector: 'app-profile-section',
   imports: [CommonModule],
   templateUrl: './profile-section.html',
-  styleUrl: './profile-section.css'
+  styleUrls: ['./profile-section.css', '../../shared/shared.css'],
 })
 export class ProfileSection {
   sectionTitle = input<string>();
+  id = input<string>();
+  classList = input<string>();
 
 
 }

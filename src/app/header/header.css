@@ -1,21 +1,20 @@
 .app-nav-pill {
     border-radius: 20px;
-    color: #262626;
     padding-block: calc(var(--spacing) * 2);
     padding-inline: calc(var(--spacing) * 4);
     text-align: center;
     margin-inline: calc(var(--spacing) * 1);
     margin-block: calc(var(--spacing) * 1);
     word-wrap: wrap;
-    background-color: white;
     box-shadow: var(--shadow-lg);
-    /* background-color: #6290C3; */
-    background-color: #acbfa4;
     max-width: 100%;
+    font-size: larger;
+    background-color: #283444;
 }
 
 .app-nav-pill:hover {
-    background-color: #74816e;
+    background-color: #C0C999;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+

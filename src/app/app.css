@@ -1,7 +1,19 @@
-.app-background {
-    background-color: #E2E8CE;
+#app-header-div {
+    transition: top 0.5s ease;
 }
 
+.app-background {
+    color: #F2FDFF;
+    /* background-color: #040F16; */
+    /* background-color: #E2E8CE; */
+    /* background: linear-gradient(to bottom, #19233a, #272932); */
+    
+    font-family: "Josefin Sans", sans-serif;
+    /* font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal; */
+}
+    
 .app-nav-pill {
     border-radius: 20px;
     color: #222;

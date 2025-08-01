@@ -1,15 +1,40 @@
-import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
-import { RouterLink } from '@angular/router';
-
+import { ViewportScroller } from '@angular/common';
+import { Component, effect, ElementRef, inject, output, QueryList, signal, viewChild, ViewChildren } from '@angular/core';
+import { debounceTime, fromEvent, map } from 'rxjs';
+import { toSignal } from '@angular/core/rxjs-interop';
 @Component({
   selector: 'app-header',
-  imports: [RouterLink],
   templateUrl: './header.html',
   styleUrl: './header.css'
 })
 export class Header {
   @ViewChildren('navpill') navPills!: QueryList<ElementRef<HTMLDivElement>>;
+  private viewportScroller = inject(ViewportScroller);
+  appHeader = viewChild<ElementRef<HTMLDivElement>>('appHeader');
+  viewportWidth = signal(window.innerWidth);
+  clicked = output<boolean>();
 
+  constructor() {
+    // Resize event handling using RxJS for Anchor Scrolling
+    const resize$ = fromEvent(window, 'resize')
+      .pipe(
+        debounceTime(200),
+        map(() => window.innerWidth)
+      );
+
+    const widthSignal = toSignal(resize$, { initialValue: window.innerWidth });
+    effect(() => {
+      const width = widthSignal();
+      console.log('viewport width changed:', width);
+        // Change the header size based on the viewport size
+      this.updateHeaderSize();
+    });
+
+  }
+
+  ngOnInit() {
+    this.viewportScroller.setOffset(() => [0, 60]);
+  }
   ngAfterViewInit() {
     let maxWidth = 0;
 
@@ -22,6 +47,30 @@ export class Header {
     this.navPills.forEach((pill) => {
       pill.nativeElement.style.width = `${maxWidth}px`;
     });
+  }
+
+  updateHeaderSize() {
+    const header = this.appHeader();
+    if (header) {
+      const headerHeight = header.nativeElement.getBoundingClientRect().height;
+      // const headerHeight = header.nativeElement.offsetHeight;
+      this.viewportScroller.setOffset(() => [0, headerHeight]);
+    }
+  }
+
+  onNavClick(destinationId: string) {
+    this.viewportScroller.scrollToAnchor(destinationId);
+    this.clicked.emit(true);
+    // const el = document.getElementById(destinationId);
+    // if (el) {
+    //   setTimeout(() => {
+    //     el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    //   }, 100);
+    // }
+    // window.scrollTo({
+    //   top: document.getElementById(destinationId)?.offsetTop || 0,
+    //   behavior: 'smooth' // Optional: Adds a smooth scrolling effect
+    // });
   }
 
 

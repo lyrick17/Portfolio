@@ -1,0 +1,62 @@
+
+<header class="text-2xl font-bold text-center">
+    {{ selectedProject().name || 'Project Details' }}
+</header>
+<div class="text-center text-gray-300 text-sm mb-2">{{ selectedProject().description }}</div>
+@if (selectedProject().link) {
+    <div class="text-green-300 text-center italic mb-2">
+        <a class="hover:underline" [href]="selectedProject().link" target="_blank" rel="noopener noreferrer">
+            {{ selectedProject().link }}
+        </a>
+    </div>
+}
+<!-- Images -->
+@if (selectedProject().images && selectedProject().images!.length > 0) {
+    <div class="flex items-center justify-center pb-4"> 
+        <p-galleria 
+            [value]="selectedProject().images" 
+            [autoPlay]="true" 
+            [circular]="true"
+            [showItemNavigatorsOnHover]="true" 
+            [showItemNavigators]="true"
+            [indicatorsPosition]="'top'" 
+            [showIndicators]="true" 
+            [showThumbnails]="false" 
+            [showIndicatorsOnItem]="true" 
+            [containerStyle]="{ 'max-width': '700px'}" >
+            <ng-template pTemplate="item" let-item>
+                <img [src]="item" style="width: 100%; display: block;" />
+            </ng-template>
+        </p-galleria>
+    </div>
+}
+
+
+<!-- Description -->
+<div class="text-center mb-6">
+    @for (par of selectedProject().paragraphs; track $index) {
+        <p class="mb-5">
+            <markdown [data]="par">
+            </markdown>
+        </p>
+    }
+    
+</div>
+
+<!-- Created With -->
+<div>
+    <div class="flex flex-row flex-wrap justify-center gap-2 mt-2">
+        @for (tech of selectedProject().technologies; track $index) {
+            <div class="bg-gray-700 hover:bg-gray-900 transition rounded-lg px-3 py-1 flex items-center">
+                <div class="inline-flex items-center">
+                    <img [src]="projectService.getTechSkillImage(tech)" [alt]="tech + ' icon'" class="w-6">
+                </div>
+                @if (showSkillName()) {
+                    <div class="ml-2">
+                        {{ projectService.getTechSkillName(tech) }}
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</div>

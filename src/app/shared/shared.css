@@ -1,0 +1,42 @@
+.bg-nav-color {
+  background-color: #1f2937;
+  /* background-color: #111827; */
+}
+
+.bg-prussian-blue {
+    background-color: #1E293B;
+}
+
+.bg-sage {
+    background-color: #C0C999;
+}
+
+.bg-olivine {
+    background-color: #A4B162;
+}
+
+.bg-darker-olivine {
+    background-color: #8A9B4A;
+}
+
+.unselected-choice:hover {
+    /* background-color: #8A9B4A; */
+    background-color: #C0C999;
+    color: black;
+}
+
+.divider {
+    border: 0;
+    border-radius: 20px;
+    background-color: #A4B162;
+    margin-top: calc(var(--spacing) * 2);
+    margin-bottom: calc(var(--spacing) * 2);
+}
+
+.height-2px {
+    height: 2px;
+}
+
+.height-5px {
+    height: 5px;
+}

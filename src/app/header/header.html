@@ -1,4 +1,34 @@
-<nav class="container mx-auto flex flex-row justify-center items-center h-16 max-w-full">
+<header #appHeader>
+  <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-2 lg:py-6 lg:px-8">
+    <div></div>
+    <div class="flex flex-row flex-wrap justify-center">
+      <a (click)="onNavClick('profile')">
+        <div class="app-nav-pill text-white"  #navpill>
+          Profile
+        </div>
+      </a>
+      <a (click)="onNavClick('projects')">
+        <div class="app-nav-pill text-white"  #navpill>
+          Projects
+        </div>
+      </a>
+      <a (click)="onNavClick('certifications')">
+        <div class="app-nav-pill text-white"  #navpill>
+          Certifications
+        </div>
+      </a>
+      <a (click)="onNavClick('skills')">
+        <div class="app-nav-pill text-white"  #navpill>
+          Skills
+        </div>
+      </a>
+    </div>
+    <div></div>
+
+  </nav>
+  
+</header>
+<!-- <nav class="container mx-auto flex flex-col md:flex-row justify-center items-center max-w-full">
   <a routerLink="/">
     <div class="app-nav-pill" #navpill>
       Profile
@@ -14,24 +44,4 @@
       Certifications
     </div>
   </a>
-</nav>
-
-    <!-- <nav class="container mx-auto h-16 flex justify-center items-center">
-    <div class="bg-[#d8f9ff] rounded flex justify-center items-center px-12 py-2 shadow-lg">
-      <a routerLink="/">
-        <div class="app-nav-pill" #navpill>
-          Profile
-        </div>
-      </a>
-      <a routerLink="projects">
-        <div class="app-nav-pill" #navpill>
-          Projects
-        </div>
-      </a>
-      <a routerLink="certifications">
-        <div class="app-nav-pill" #navpill>
-          Certifications
-        </div>
-      </a>
-    </div>
-  </nav> -->
+</nav> -->

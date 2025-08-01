@@ -1,1 +1,25 @@
-<p>projects works!</p>
+
+
+<div class="flex flex-col lg:flex-row w-full">
+    <!-- SideBar -->
+    <div class="w-full lg:w-1/4 p-4">
+        <h1 class="text-xl font-bold mb-2">Featured Projects</h1>
+        <p class="text-sm mb-4">Explore my projects below. Click on a project to view its details.</p>
+        <div class="rounded-lg bg-gray-800 shadow-lg">
+            @for (project of projectService.getProjects(); track $index) {
+                <app-project-nav-entry
+                    [project]="project"
+                    [isSelected]="projectService.isProjectSelected(project.id)"
+                    (onClick)="onProjectSelected(project)">
+                </app-project-nav-entry>
+            }
+
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="px-5 py-4 w-full lg:w-3/4 rounded-lg shadow-lg bg-gray-800">
+        <app-project-content-entry [selectedProject]="projectService.getSelectedProject()" />
+    </div>
+</div>
+

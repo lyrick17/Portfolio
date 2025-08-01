@@ -1,19 +1,19 @@
-#profile-card {
-    border-color: #cacaca;
-    border-width: 1px;
-    background-color: #acbfa4;
-}
+/* #profile-card {
+    background-color: #161e2d;
+} */
 
 .app-section-header {
-    border-radius: 5px;
-    border-color: #606d54;
-    border-width: 1px;
-    color: #fff;
     padding-inline: calc(var(--spacing) * 4);
     padding-block: calc(var(--spacing) * 1);
     text-align: center;
-    box-shadow: var(--shadow-lg);
-    background-color: #606d54;
-    font-weight: bold;
-    text-transform: lowercase;
+    font-size: 1.5rem;
+    font-size: xx-large;
+    /* border-radius: 5px;
+    border-width: 1px; */
+    /* border-color: #606d54; */
+    /* color: #fff; */
+    /* background-color: #606d54; */
+    /* box-shadow: var(--shadow-lg); */
+    /* font-weight: bold; */
 }
+

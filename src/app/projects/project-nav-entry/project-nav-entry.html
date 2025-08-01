@@ -1,0 +1,9 @@
+<button 
+    (click)="onProjectClick()" 
+    class="transition w-full flex flex-wrap items-center cursor-pointer px-4 py-2 text-lg text-grey-darkest rounded-lg"
+    [ngClass]="{'bg-darker-olivine': isSelected(), 'unselected-choice': !isSelected()}">        
+    <div class="flex-shrink-0 w-8 h-8 inline-flex items-center justify-center rounded-lg bg-white mr-1">
+        <img [src]="project().image" [alt]="project().name + ' Logo'" class="w-6">
+    </div>
+    <div class="pl-2">{{ project().name }}</div>
+</button>

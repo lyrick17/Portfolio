@@ -1,0 +1,22 @@
+#tech-skills h4 {
+    
+    font-size: 1.5rem;
+    
+    font-weight: 100;
+    margin-bottom: 1rem;
+    color: #f0f0f0; /* Light color for better contrast */
+}
+
+:host ::ng-deep p-tabs {
+    border-radius: 20px;
+    background-color: aqua;
+}
+
+p-tablist {
+  font-family: 'Roboto Mono', monospace;
+}
+
+:host ::ng-deep p-tabpanels {
+  background-color: #1e2939 !important; /* Tab content area */
+  padding: 1rem;
+}

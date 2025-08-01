@@ -1,0 +1,11 @@
+/* .techImgDiv:hover {
+    width: calc(var(--spacing) * 25);
+    height: calc(var(--spacing) * 25);
+    transition: width 0.3s ease, height 0.3s ease;
+} */
+
+.techImg:hover {
+    width: calc(var(--spacing) * 15);
+    height: calc(var(--spacing) * 15);
+    transition: width 0.3s ease, height 0.3s ease;
+}

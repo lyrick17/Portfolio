@@ -1,1 +1,20 @@
-<p>certifications works!</p>
+
+<p-carousel [value]="certificates" [numVisible]="2" [numScroll]="1" [circular]="true" [responsiveOptions]="responsiveOptions" autoplayInterval="5000">
+    <ng-template let-cert #item>
+        <div class="rounded-lg m-2 flex flex-col">
+            <div class="bg-gray-800 mx-auto">
+                <p-image #imageDiv [style.min-height]="imageHeight" [src]="cert.image" [alt]="cert.name" class="w-full rounded-t-lg" [preview]="true" [appendTo]="'body'" />
+            </div>
+            <div class="bg-gray-800 rounded-b-lg">
+                <div #textDiv [style.min-height]="textHeight" class="pt-2 text-lg px-2 text-center font-medium">{{ cert.name }}</div>
+                @if (cert.year) {
+                    <div class="mb-4 px-2 text-center text-sm font-medium">
+                        Accomplished on: <br />
+                        {{ cert.month }} {{ cert.year }}
+                    </div>
+                }
+            </div>
+        </div>
+    </ng-template>
+</p-carousel>
+

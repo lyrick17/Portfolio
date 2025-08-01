@@ -1,0 +1,52 @@
+<div class="p-2 rounded-lg bg-[#18181b]">
+    <p-tabs value="pl" scrollable>
+        <p-tablist>
+            @for (tab of tabs; track tab.value) {
+                <p-tab [value]="tab.value">{{ tab.title }}</p-tab>
+            }
+        </p-tablist>
+        <p-tabpanels>
+            @for (tab of tabs; track tab.value) {
+                <p-tabpanel [value]="tab.value">
+                    @if (tab.value === 'pl') {
+                        <div class="grid grid-cols-3 md:grid-cols-6 gap-4 justify-center items-center">
+                            @for (skill of programmingSkills; track $index) {
+                                <app-tech-entry
+                                    [techStackName]="skill.name"
+                                    [techStackImage]="skill.image">
+                                </app-tech-entry>
+                            }
+                        </div>
+                    } @else if (tab.value === 'fw') {
+                        <div class="grid grid-cols-3 md:grid-cols-4 gap-4 justify-center items-center">
+                            @for (skill of frameworkSkills; track $index) {
+                                <app-tech-entry
+                                    [techStackName]="skill.name"
+                                    [techStackImage]="skill.image">
+                                </app-tech-entry>
+                            }
+                        </div>
+                    } @else if (tab.value === 'db') {
+                        <div class="grid grid-cols-3 md:grid-cols-5 gap-4 justify-center items-center">
+                            @for (skill of databaseSkills; track $index) {
+                                <app-tech-entry
+                                    [techStackName]="skill.name"
+                                    [techStackImage]="skill.image">
+                                </app-tech-entry>
+                            }
+                        </div>
+                    } @else if (tab.value === 'tools') {
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 justify-center items-center">
+                            @for (skill of toolsSkills; track $index) {
+                                <app-tech-entry
+                                    [techStackName]="skill.name"
+                                    [techStackImage]="skill.image">
+                                </app-tech-entry>
+                            }
+                        </div>
+                    }
+                </p-tabpanel>
+            }
+        </p-tabpanels>
+    </p-tabs>
+</div>

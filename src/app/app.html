@@ -1,7 +1,8 @@
-<main class="app-background">
-<div class="pt-10 pb-6">
-  <app-header />
-</div>
+<main class="app-background bg-gray-900">
+  <div id="app-header-div" class="bg-nav-color sticky top-0 bg-white z-50 shadow-2xl " #appHeaderDiv>
+    <app-header (clicked)="navBarClicked()" />
+  </div>
   <router-outlet />
+  <app-footer />
 </main>
 
