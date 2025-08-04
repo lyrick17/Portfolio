@@ -3,7 +3,7 @@
     <ng-template let-cert #item>
         <div class="rounded-lg m-2 flex flex-col">
             <div class="bg-gray-800 mx-auto">
-                <p-image #imageDiv [style.min-height]="imageHeight" [src]="cert.image" [alt]="cert.name" class="w-full rounded-t-lg" [preview]="true" [appendTo]="'body'" />
+                <p-image loading="lazy" #imageDiv [style.min-height]="imageHeight" [src]="cert.image" [alt]="cert.name" class="w-full rounded-t-lg" [preview]="true" [appendTo]="'body'" />
             </div>
             <div class="bg-gray-800 rounded-b-lg">
                 <div #textDiv [style.min-height]="textHeight" class="pt-2 text-lg px-2 text-center font-medium">{{ cert.name }}</div>

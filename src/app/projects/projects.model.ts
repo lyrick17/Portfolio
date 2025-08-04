@@ -21,7 +21,7 @@ export const FeaturedProjects : Project[] = [
     {
         id: 'gradewise',
         name: 'GradeWise',
-        image: 'icons/projects/gradewise.png',
+        image: 'icons/projects/gradewise.webp',
         description: 'Class Management System with Automated Handwritten Text Recognition',
         paragraphs: [   
             `**GradeWise** is a class management system designed to streamline the class record 
@@ -39,17 +39,17 @@ export const FeaturedProjects : Project[] = [
         technologies: ['dart', 'flutter', 'react', 'nodejs', 'tailwind', 'firebase', 'objectbox', 'python'],
         link: 'https://gradewise.netlify.app/',
         images: [
-            'projects/gradewise/1.png',
-            'projects/gradewise/2.png',
-            'projects/gradewise/3.png',
-            'projects/gradewise/4.png',
-            'projects/gradewise/5.png',
+            'projects/gradewise/1.webp',
+            'projects/gradewise/2.webp',
+            'projects/gradewise/3.webp',
+            'projects/gradewise/4.webp',
+            'projects/gradewise/5.webp',
         ]
     },
     {
         id: 'airis',
         name: 'Airis',
-        image: 'icons/projects/airis.png',
+        image: 'icons/projects/airis.webp',
         description: 'A Smart Chatbot with multiple AI Personas using GPT-4o Model',
         paragraphs: [   
             `**Airis** is an AI Chatbot where different chatbots are available with different specialties. It is created to assist users and businesses on providing assistance in various tasks. It has multiple AI personas such as Marketing Specialist, Intern Advisor, and more.`,
@@ -61,7 +61,7 @@ export const FeaturedProjects : Project[] = [
     {
         id: 'voce',
         name: 'Voce',
-        image: 'icons/projects/voce.jpg',
+        image: 'icons/projects/voce.webp',
         description: 'An AI-powered Audio to Text Translation Service with Text to Text Translation',
         paragraphs: [
             `**Voce** is an Audio to Text translator website with over 100 supported languages. 
@@ -75,17 +75,17 @@ export const FeaturedProjects : Project[] = [
         ],
         technologies: ['html', 'css', 'javascript', 'php', 'python', 'flask', 'mysql'],
         images: [
-            'projects/voce/1.png',
-            'projects/voce/2.png',
-            'projects/voce/3.png',
-            'projects/voce/4.png',
+            'projects/voce/1.webp',
+            'projects/voce/2.webp',
+            'projects/voce/3.webp',
+            'projects/voce/4.webp',
         ]
 
     },
     {
         id: 'candela',
         name: 'Candela',
-        image: 'icons/projects/candela.png',
+        image: 'icons/projects/candela.webp',
         description: 'A Food Candle E-commerce Website',
         paragraphs: [
             `**Candela** is an E-commerce website dedicated on selling food candles. 
@@ -99,10 +99,10 @@ export const FeaturedProjects : Project[] = [
         technologies: ['html', 'css', 'bootstrap', 'javascript', 'php', 'mysql'],
         link: 'https://candela.great-site.net/',
         images: [
-            'projects/candela/1.png',
-            'projects/candela/2.png',
-            'projects/candela/3.png',
-            'projects/candela/4.png',
+            'projects/candela/1.webp',
+            'projects/candela/2.webp',
+            'projects/candela/3.webp',
+            'projects/candela/4.webp',
         ]
     },
     

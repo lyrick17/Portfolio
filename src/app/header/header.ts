@@ -25,7 +25,6 @@ export class Header {
     const widthSignal = toSignal(resize$, { initialValue: window.innerWidth });
     effect(() => {
       const width = widthSignal();
-      console.log('viewport width changed:', width);
         // Change the header size based on the viewport size
       this.updateHeaderSize();
     });

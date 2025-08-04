@@ -1,0 +1,10 @@
+Dimensions per Images:
+Certificates:
+    Width: 715px
+    Height: relative
+Education and Work Experience:
+    Width: 200px
+    Height: 200px
+Projects:
+    Width: 800px
+    Height: relative
