@@ -2,7 +2,7 @@ import { Component, effect, ElementRef, signal, viewChild, ViewChild } from '@an
 import { RouterOutlet } from '@angular/router';
 import { Header } from "./header/header";
 import { Footer } from "./footer/footer";
-import { fromEvent } from 'rxjs';
+import { fromEvent, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -18,11 +18,11 @@ export class App {
   ticking = false;
   clicked = false;
 
-  constructor() {
-    // Handle scroll events to hide navbar when user scrolls down
-    // display the navbar when user scrolls up
-    const scroll$ = fromEvent(window, 'scroll');
-    scroll$.subscribe(() => {
+  private subscriptions: Subscription[] = [];
+  private cleanUps: (() => void)[] = [];
+
+  ngOnInit() {
+    const scrollSubscribe = fromEvent(window, 'scroll').subscribe(() => {
       if (!this.ticking && !this.clicked) {
         window.requestAnimationFrame(() => {
           const currentScrollPosition = window.scrollY;
@@ -37,17 +37,39 @@ export class App {
               this.appHeader()!.nativeElement.classList.remove('top-0');
             }
           }
-          this.clicked = false; // Reset clicked state when scrolling
+          // this.clicked = false; // Reset clicked state when scrolling
           this.lastKnownScrollPosition = currentScrollPosition;
           this.ticking = false;
         });
 
         this.ticking = true;
-      } else {
-        this.clicked = false; // Reset clicked state if already ticking
       }
-
+    
     });
+    this.subscriptions.push(scrollSubscribe);
+
+    // Clean up subscriptions
+    this.cleanUps.push(() => scrollSubscribe.unsubscribe());
+    
+    ['wheel', 'touchstart', 'keydown'].forEach((evtName) => {
+      const handler = (ev: Event) => {
+        // only act on trusted (user) events
+        if (this.clicked && ev.isTrusted) {
+          this.clicked = false;
+        }
+      };
+
+      document.addEventListener(evtName, handler, { capture: true });
+
+      this.cleanUps.push(() =>
+        document.removeEventListener(evtName, handler, { capture: true })
+      );
+    });
+  
+  }
+
+  ngOnDestroy(): void {
+    this.cleanUps.forEach(cleanUp => cleanUp());
   }
 
   navBarClicked() {

@@ -60,16 +60,6 @@ export class Header {
   onNavClick(destinationId: string) {
     this.viewportScroller.scrollToAnchor(destinationId);
     this.clicked.emit(true);
-    // const el = document.getElementById(destinationId);
-    // if (el) {
-    //   setTimeout(() => {
-    //     el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    //   }, 100);
-    // }
-    // window.scrollTo({
-    //   top: document.getElementById(destinationId)?.offsetTop || 0,
-    //   behavior: 'smooth' // Optional: Adds a smooth scrolling effect
-    // });
   }
 
 
