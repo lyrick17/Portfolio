@@ -8,7 +8,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
   styleUrl: './header.css'
 })
 export class Header {
-  @ViewChildren('navpill') navPills!: QueryList<ElementRef<HTMLDivElement>>;
+  // @ViewChildren('navpill') navPills!: QueryList<ElementRef<HTMLDivElement>>;
   private viewportScroller = inject(ViewportScroller);
   appHeader = viewChild<ElementRef<HTMLDivElement>>('appHeader');
   viewportWidth = signal(window.innerWidth);
@@ -34,19 +34,21 @@ export class Header {
   ngOnInit() {
     this.viewportScroller.setOffset(() => [0, 60]);
   }
-  ngAfterViewInit() {
-    let maxWidth = 0;
 
-    this.navPills.forEach((pill) => {
-      if (pill.nativeElement.offsetWidth > maxWidth) {
-        maxWidth = pill.nativeElement.offsetWidth;
-      }
-    })
+  // Previous method for setting up header button sizes (unnecessary now)
+  // ngAfterViewInit() {
+  //   let maxWidth = 0;
 
-    this.navPills.forEach((pill) => {
-      pill.nativeElement.style.width = `${maxWidth}px`;
-    });
-  }
+  //   this.navPills.forEach((pill) => {
+  //     if (pill.nativeElement.offsetWidth > maxWidth) {
+  //       maxWidth = pill.nativeElement.offsetWidth;
+  //     }
+  //   })
+
+  //   this.navPills.forEach((pill) => {
+  //     pill.nativeElement.style.width = `${maxWidth}px`;
+  //   });
+  // }
 
   updateHeaderSize() {
     const header = this.appHeader();

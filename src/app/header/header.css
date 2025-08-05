@@ -8,8 +8,9 @@
     word-wrap: wrap;
     box-shadow: var(--shadow-lg);
     max-width: 100%;
-    font-size: larger;
     background-color: #283444;
+    /* font-size: larger; */
+    /* width: 143px; */
 }
 
 .app-nav-pill:hover {
