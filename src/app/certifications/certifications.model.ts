@@ -25,10 +25,24 @@ export const CertificatesCollection: CertificateItem[] = [
         year: '2024'
     },
     {
+        id: 'workshop-data-science',
+        name: '2-day Data Science Workshop',
+        image: 'certificates/cert-data-science-workshop.webp',
+        month: 'April',
+        year: '2024'
+    },
+    {
         id: 'competition-isite-cplusplus',
         name: 'First Runner Up - National IT Skills C++ Programming Competition',
         image: 'certificates/comp-cplusplus.webp',
         month: 'April',
+        year: '2024'
+    },
+    {
+        id: 'competition-umak-dotnet',
+        name: 'Cert of Participation - 13th IT Skills Olympics .NET Programming',
+        image: 'certificates/comp-dotnet.webp',
+        month: 'November',
         year: '2024'
     },
     {
@@ -37,13 +51,6 @@ export const CertificatesCollection: CertificateItem[] = [
         image: 'certificates/cert-angular.webp',
         month: 'July',
         year: '2025'
-    },
-    {
-        id: 'completion-sap',
-        name: 'SAP Basic - SAP Business One',
-        image: 'certificates/cert-sap.webp',
-        month: 'March',
-        year: '2023'
     },
     {
         id: 'completion-networking',
@@ -59,4 +66,12 @@ export const CertificatesCollection: CertificateItem[] = [
         month: 'May',
         year: '2024'
     },
+    {
+        id: 'completion-sap',
+        name: 'SAP Basic - SAP Business One',
+        image: 'certificates/cert-sap.webp',
+        month: 'March',
+        year: '2023'
+    },
+    
 ]
